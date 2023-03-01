@@ -1,0 +1,39 @@
+//Lưu ý cú pháp import file scss(những file có _ đằng trc thì sẽ bị bỏ qua khi biên dịch whatchsass, chú ý phải kết thúc bằng dấu chấm phẩy.
+
+//Chú ý phải import theo đúng thứ tự sau:
+
+@import './Helper/variables';
+@import './Helper/mixin';
+//Helper: chứa những file variables, mixin, extend, function,...
+
+
+@import './Base/reset';
+@import './Base/customize';
+//Base: chứa những file chỉnh sửa lại mặc định của trình duyệt hoặc thư viện
+
+.demo{
+    color: $color-blue;
+}
+
+@import './Components/button';
+@import './Components/card';
+//Components: chứa những file phần tử nhỏ của trang web (button, dropdown,..)
+
+@import './Layouts/carousel';
+@import './Layouts/footer';
+@import './Layouts/header';
+@import './Layouts/products';
+//Layouts: chứa những thành phần lớn dùng chung của trang web.(header, footer, sidebar..)
+
+
+// Pages: chứa style riêng của những page khác nhau. (home, contact, about…)
+
+
+//Themes: chứa những theme chủ đạo khác nhau của trang web
+
+
+// Vendors (nhà cung cấp): chứa file scss của những thư viện mà chúng ta sử dụng
+
+
+
+

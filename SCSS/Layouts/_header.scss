@@ -1,0 +1,68 @@
+
+$header-height: 90px;
+$fs-brand: 1.8rem;
+$fs-link: 1.1rem;
+
+
+.header {
+  background-color: $color-grey-light;
+  height: $header-height;
+  box-shadow: 0 2px 4px $color-blue-light;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  .navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    
+    // font-size: $fs-brand;
+    // font-weight: 700;
+    // color: $color-blue;
+
+    //Sử dụng 1 hàm mixin bằng từ khóa include
+    @include textStyle($color-blue, $fs-brand, 700);
+  }
+
+  
+  .navbar-nav{
+    .active {
+        & > .nav-link { //Lưu ý kỹ thuật &> (dấu & thay cho tên thằng cha để trỏ thẳng vào thẻ con(lấy thẻ con trực tiếp bên trong active))
+                color: $color-blue;
+                &::after{
+                    transform: scaleX(1);
+                }
+        }
+      }
+    .nav-link{
+        // font-size: $fs-link;
+        // font-weight: 600;
+        // color: $color-blue-dark;
+        @include textStyle($color-blue-dark, $fs-link, 600);
+        padding: 25px;
+        transition: 0.2s;
+        &::after{
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: $color-blue;
+            transform: scaleX(0);
+            transition: 0.2s;
+        }
+        &:hover{
+            color: $color-blue;
+            &::after{
+                transform: scaleX(1);
+            }
+        }
+      }
+  }
+ 
+
+  
+}

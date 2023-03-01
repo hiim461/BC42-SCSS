@@ -1,0 +1,45 @@
+////Mixins, dùn để tạo các hàm tái sử dụng nhận vào các tham số và định nghĩa các thuộc tính css
+
+//Định nghĩa hàm bằng từ khóa mixin
+@mixin textStyle($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+@mixin buttonStyle($bg, $border, $border-radius, $px, $py) {
+  background-color: $bg;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $py $px;
+}
+@mixin buttonStyleHover($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+//===============================================================
+//Responsive with mixin
+//Mobile first ( từ nhỏ đến lớn)
+@mixin responsive($screen) {
+  //map-has-key là hàm dùng để kiểm tra một key có tồn tại trong map hay không
+  @if (map-has-key($map: $breakpoints, $key: $screen)) {
+    //map-get là hàm để lấy giá trị trong map bằng key
+    $width: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+//Sử dụng:
+// @include responsive("md") {
+//color: red;
+// }
+
+/* 
+Thay vì: 
+@media screen and (min-width: 768px) {
+  color: red;
+}
+*/

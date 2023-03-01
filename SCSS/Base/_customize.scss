@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap");
+html,
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+//========================================== @each
+
+$color-collection:(
+  "blue-light" : $color-blue-light,
+  "blue": $color-blue,
+  "blue-dark" : $color-blue-dark,
+  "white" : $color-white,
+  "black" : $color-black,
+);
+
+@each $key, $value in $color-collection {
+  .color-#{$key} { // #{$key} giống như `` thêm thẻ html trong javascript
+    color: $value;
+  }
+}
+
+//Tạo ra các class từ col-1 đến col-12
+$breakpoint-list : "sm", "md", "lg", "xl" ; //list
+
+@for $number from 1 through 12 {
+  .col-#{$number} {
+    width: 100 * $number / 12;
+  }
+  @each $breakpoint in $breakpoint-list {
+    .col-#{$breakpoint}-#{$number}{
+      width: 100% * $number / 12;
+    }
+  }
+}
+
+/*
+1a
+2b
+3d
+4d  
+5c
+6d
+7acebdf
+8d
+9ac
+10d
+
+*/
+

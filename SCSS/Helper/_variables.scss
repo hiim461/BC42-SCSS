@@ -1,0 +1,40 @@
+//Phân tích từ giao diện UI, các giá trị css (color, margin, padding, width, height, font-size,..) mà có thể được sử dụng từ 2 lần trở lên, ta sẽ tạo các biên chứa các giá trị đó.
+
+//Colors
+$color-blue-light: #c9d8f4;
+$color-blue: #2a73dd;
+$color-blue-dark: #1d365e;
+$color-yellow: #f9d412;
+$color-black: #656774;
+$color-white: #fff;
+$color-grey-light: #f5f9fe;
+$color-grey: #e2ebef;
+
+
+//Margin
+
+//Padding
+
+//Lưu trữ biến là 1 danh sách các giá trị
+$breakpoints: (
+    //key: value,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+
+//Dể truy cập vào các giá trị trong danh sách
+// map-get($breakpoints, 'md');
+
+
+
+//Header
+
+
+
+
+
+
+
+
